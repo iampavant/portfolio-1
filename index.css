@@ -58,6 +58,66 @@ font-size: 30px;
 font-size: 60px;
 margin: 20px;
 }
+.content{
+  margin-top: 25%;
+}
+.content h1{
+  font-size: clamp(1rem, 2rem + 5vw, 3rem);
+}
+
+.content h1 span{
+  color: rgb(255, 0, 187);
+  text-shadow: 0 0 10px rgb(255, 0, 187);
+}
+
+.content .typewriter{
+  font-weight: 600;
+  font-size: clamp(1rem, 1rem + 5vw, 2rem);
+}
+
+.content .typewriter span{
+  color:rgb(255, 0, 187);
+  font-size: 2.5rem;
+  text-shadow: 0 0 5px rgb(255, 0, 187);
+  position: relative;
+  transition: 0.3s linear;
+}
+
+.typewriter span::before{
+  content: "Developer";
+  animation: words 15s infinite;
+}
+
+.typewriter span::after{
+  content: "";
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 100%;
+  border-left: 3px solid rgb(255, 255, 255);
+  animation:  cursor 0.6s linear infinite;
+}
+
+@keyframes cursor {
+  to{
+      border-left: 3px solidrgb(255, 0, 187);
+  }
+}
+
+@keyframes words {
+  0%, 33%{
+      content: "Developer";
+  }
+  34%, 66%{
+      content: "Designer";
+  }
+
+}
+
+.content p{
+  font-size: clamp(0.4rem, 0.2rem + 9vw, 1rem);
+  margin: 10px 0;
+}
+
 /*-------------------------------------about----------------------*/
 #about{
 padding: 80px 0;
@@ -163,7 +223,6 @@ animation-delay: 0.3s;
 /*-------works---------------------*/
 .work-titles{
 display: flex;
-margin: 20px 0 40px;  
 text-align: center;            
 justify-content: space-around;
 }
@@ -172,9 +231,24 @@ color: rgb(255, 0, 187);
 }
 .works {
                     display: flex;
-                    justify-content: space-around;
                     align-items: center;
+
 }
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+  background-color: rgb(255, 0, 187);;
+  color: black;
+  box-shadow: 0 0 10px rgb(255, 0, 187);;
+}
+
 /*------------contact------------------------*/
 .contact-left{
 flex-basis: 35%;
